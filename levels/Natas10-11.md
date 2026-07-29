@@ -73,7 +73,7 @@ In the source code we see the target:
 Next, we obtain the cookie value 
 
 
-    data=HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAyIxTRg=
+        data=EGAgHwQ1IxYYMSQYGSZxTUksPFVHYDEQCC0%2FGBlgaVVIJDURDSQ1VRY%3D
 
 As we can see the cookie contains XOR-encrypted JSON encoded with base64
 
@@ -110,7 +110,7 @@ A PHP script was used to reproduce the XOR operation and compare known plaintext
         return $outText;
     } 
 
-    $cookie = "HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAyIxTRg%3D";
+    $cookie = "EGAgHwQ1IxYYMSQYGSZxTUksPFVHYDEQCC0%2FGBlgaVVIJDURDSQ1VRY%3D";
 
     echo xor_encrypt(base64_decode($cookie)); 
 
@@ -120,7 +120,7 @@ A PHP script was used to reproduce the XOR operation and compare known plaintext
 
 The resulting output revealed a repeating pattern
 
-    eDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWoeDWo...
+    kBSwkBSwkBSwkBSwkBSw..
 
 From this pattern the XOR key was determined to be eDWo
 
@@ -139,7 +139,7 @@ And we used another script to encrypt it using the recovered key
     <?
 
     function xor_encrypt($in) {
-        $key = "eDWo";
+        $key = "kBSw";
 
         $text = $in;
         $outText = '';
@@ -167,8 +167,7 @@ And we used another script to encrypt it using the recovered key
 
 And we got 
     
-    HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5
-
+    EGAgHwQ1IxYYMSQYGSZxTUk7NgRJbnEVDCE8GwQwcU1JYTURDSQ1EUk/
 
 Then we just replace the cookie
 
