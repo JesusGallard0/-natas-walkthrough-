@@ -48,3 +48,6 @@ The purpose of this repository is educational:
 In progress
 
 
+Disclaimer: OverTheWire periodically updates the Natas servers,some walkthroughts might feature outdated scripts or broken payloads due to these servers upgrades,the fundamental vulnerabilities and core exploitation methodologies documented in this repository remain full valid as of today
+
+
