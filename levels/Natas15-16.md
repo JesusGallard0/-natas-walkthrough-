@@ -82,7 +82,7 @@ Then we used a python script to brute-force the password one character at a time
     import requests
 
     url = "http://natas16.natas.labs.overthewire.org/"
-    auth = ("natas16", "hPkjKYviLQctEW33QmuXL6eDVfMW4sGo")
+    auth = ("natas16", "Xm6XEeRN3zsGjRDqBPmuqAVV65k7e3Gb")
 
     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     password = ""
@@ -109,7 +109,7 @@ Then we used a python script to brute-force the password one character at a time
                 found = True
                 break 
 
-            if not found:
+        if not found:
                 print("No matching character found!")
                 break
 
